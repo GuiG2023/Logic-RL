@@ -1,5 +1,5 @@
 #!/bin/bash
-# Logic-RL 快速验证版本 - 修复版
+# Logic-RL 快速验证版本 - 修复版2
 set -x
 
 echo "🚀 开始Logic-RL快速验证训练..."
@@ -49,9 +49,9 @@ python3 -m verl.trainer.main_ppo \
     trainer.save_freq=50 \
     trainer.test_freq=25 \
     trainer.total_epochs=1 \
-    trainer.max_steps_per_epoch=200 \
+    +trainer.max_steps_per_epoch=200 \
     trainer.gradient_accumulation_steps=2 \
-    trainer.early_stopping_patience=3 \
-    trainer.checkpoint_every_n_minutes=10
+    +trainer.early_stopping_patience=3 \
+    +trainer.checkpoint_every_n_minutes=10
 
 echo "✅ 快速验证训练完成！检查输出目录获取checkpoint。"
