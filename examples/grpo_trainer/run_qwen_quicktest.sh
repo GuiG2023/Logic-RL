@@ -50,7 +50,7 @@ python3 -m verl.trainer.main_ppo \
     trainer.test_freq=25 \
     trainer.total_epochs=1 \
     +trainer.max_steps_per_epoch=200 \
-    trainer.gradient_accumulation_steps=2 \
+    +trainer.gradient_accumulation_steps=2 \
     +trainer.early_stopping_patience=3 \
     +trainer.checkpoint_every_n_minutes=10
 
