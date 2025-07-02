@@ -17,7 +17,7 @@ python3 -m verl.trainer.main_ppo \
     data.train_files=/content/Logic-RL/data/kk/instruct/3ppl/train.parquet \
     data.val_files=/content/Logic-RL/data/kk/instruct/3ppl/test.parquet \
     data.train_batch_size=2 \
-    data.val_batch_size=4 \
+    data.val_batch_size=2 \
     data.max_prompt_length=256 \
     data.max_response_length=512 \
     actor_rollout_ref.model.path=Qwen/Qwen2.5-7B-Instruct \
@@ -35,7 +35,7 @@ python3 -m verl.trainer.main_ppo \
     actor_rollout_ref.rollout.log_prob_micro_batch_size=8 \
     actor_rollout_ref.rollout.tensor_model_parallel_size=1 \
     actor_rollout_ref.rollout.name=vllm \
-    actor_rollout_ref.rollout.gpu_memory_utilization=0.5 \
+    actor_rollout_ref.rollout.gpu_memory_utilization=0.4 \
     actor_rollout_ref.rollout.n=1 \
     actor_rollout_ref.ref.log_prob_micro_batch_size=8 \
     actor_rollout_ref.ref.fsdp_config.param_offload=True \
