@@ -1,5 +1,5 @@
 #!/bin/bash
-# Logic-RL 快速验证版本 - 针对Colab优化
+# Logic-RL 快速验证版本 - 修复版
 set -x
 
 echo "🚀 开始Logic-RL快速验证训练..."
@@ -41,9 +41,9 @@ python3 -m verl.trainer.main_ppo \
     actor_rollout_ref.ref.fsdp_config.param_offload=True \
     algorithm.kl_ctrl.kl_coef=0.01 \
     trainer.critic_warmup=0 \
-    trainer.logger=['console'] \
-    trainer.project_name='Logic-RL-FastValidation' \
-    trainer.experiment_name='qwen2.5_7b_fast_$(date +%m%d_%H%M)' \
+    trainer.logger=[console] \
+    trainer.project_name=Logic-RL-FastValidation \
+    trainer.experiment_name=qwen2.5_7b_fast \
     trainer.n_gpus_per_node=1 \
     trainer.nnodes=1 \
     trainer.save_freq=50 \
@@ -52,6 +52,6 @@ python3 -m verl.trainer.main_ppo \
     trainer.max_steps_per_epoch=200 \
     trainer.gradient_accumulation_steps=2 \
     trainer.early_stopping_patience=3 \
-    trainer.checkpoint_every_n_minutes=10 $@
+    trainer.checkpoint_every_n_minutes=10
 
 echo "✅ 快速验证训练完成！检查输出目录获取checkpoint。"
