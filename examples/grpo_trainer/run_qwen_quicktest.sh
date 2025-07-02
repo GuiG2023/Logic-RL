@@ -14,8 +14,8 @@ python3 -c "import torch; torch.cuda.empty_cache()"
 
 python3 -m verl.trainer.main_ppo \
     algorithm.adv_estimator=grpo \
-    data.train_files=data/kk/instruct/3ppl/train.parquet \
-    data.val_files=data/kk/instruct/3ppl/test.parquet \
+    data.train_files=/content/Logic-RL/data/kk/instruct/3ppl/train.parquet \
+    data.val_files=/content/Logic-RL/data/kk/instruct/3ppl/test.parquet \
     data.train_batch_size=2 \
     data.val_batch_size=4 \
     data.max_prompt_length=256 \
